@@ -1,4 +1,4 @@
-# coding-roadmap
+# Coding Roadmap
 
 ## Project setup
 ```
