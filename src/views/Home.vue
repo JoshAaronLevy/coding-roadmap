@@ -1,31 +1,33 @@
 <template>
   <div id="blog-home" class="section">
     <div class="container">
-      <h1 class="is-size-1">{{ page_title }}</h1>
+      <h1 class="is-size-1">Articles</h1>
       <hr>
       <div class="columns is-multiline">
         <!-- Create v-for and apply a key for Vue. Example is using a combination of the slug and index -->
         <div class="column is-one-third" v-for="(post,index) in posts" :key="post.slug + '_' + index">
-          <router-link :to="'/' + post.slug">
-            <div class="box">
-              <article class="media">
-                <div class="media-left">
+          <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <router-link :to="'/' + post.slug">
                   <figure class="image is-64x64">
                     <!-- Bind results using a ':' -->
                     <!-- Use a v-if/else if their is a featured_image -->
                     <img v-if="post.featured_image" :src="post.featured_image" alt="">
                     <img v-else src="http://via.placeholder.com/250x250" alt="">
                   </figure>
-                </div>
-                <div class="media-content">
-                  <div class="content">
+                </router-link>
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <router-link :to="'/' + post.slug">
                     <h2 class="title is-5">{{ post.title }}</h2>
-                    <p>{{ post.summary }}</p>
-                  </div>
+                  </router-link>
+                  <p>{{ post.summary }}</p>
                 </div>
-              </article>
-            </div>
-          </router-link>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
@@ -79,5 +81,10 @@
 </script>
 
 <style>
-  
+img:not(.md-image) {
+  max-width: 250px !important;
+}
+.media {
+  display: flex;
+}
 </style>

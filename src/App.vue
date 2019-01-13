@@ -7,7 +7,7 @@
             <md-icon>menu</md-icon>
           </md-button>
 
-          <span class="md-title">Coding Roadmap</span>
+          <span class="md-title"><router-link to="/">Coding Roadmap</router-link></span>
         </div>
       </md-app-toolbar>
 
@@ -39,6 +39,15 @@
 
   .md-toolbar.md-theme-default.md-primary {
     height: 120px !important;
+  }
+
+  .md-theme-default a {
+    color: #fff !important;
+  }
+
+  .md-theme-default a:hover {
+    text-decoration: none;
+    color: #fff !important;
   }
 
   .md-app.md-overlap .md-app-content {
