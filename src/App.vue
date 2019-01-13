@@ -16,8 +16,16 @@
         </md-toolbar>
         <md-list>
           <md-list-item>
-            <md-icon>subject</md-icon>
+            <md-icon>list</md-icon>
+            <span class="md-list-item-text">Articles</span>
+          </md-list-item>
+          <md-list-item>
+            <md-icon>view_module</md-icon>
             <span class="md-list-item-text">Categories</span>
+          </md-list-item>
+          <md-list-item>
+            <md-icon>label</md-icon>
+            <span class="md-list-item-text">Tags</span>
           </md-list-item>
         </md-list>
       </md-app-drawer>
