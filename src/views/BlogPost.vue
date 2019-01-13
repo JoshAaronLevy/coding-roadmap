@@ -1,6 +1,6 @@
 <template>
   <div class="section" id="blog-post">
-    <div class="container center">
+    <div class="container">
       <!-- <div class="has-text-centered">
         <router-link v-if="post.meta.previous_post" :to="/blog/ + post.meta.previous_post.slug" class="button">
           {{ post.meta.previous_post.title }}
@@ -10,8 +10,13 @@
         </router-link>
       </div>
       <hr> -->
-      <h1 class="is-size-2">{{ post.data.title }}</h1>
-      <h4>{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
+      <h1 class="is-size-2 center">{{ post.data.title }}</h1>
+      <figure class="center full">
+        <!-- Bind results using a ':' -->
+        <!-- Use a v-if/else if their is a featured_image -->
+        <img :src="post.data.featured_image" alt="">
+      </figure>
+      <h4 class="center">{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
       <div class="content" v-html="post.data.body"></div>
     </div>
   </div>
@@ -50,8 +55,14 @@
 </script>
 
 <style>
-code[class*="language-javascript"],
-pre[class*="language-javascript"] {
+.center {
+  text-align: center;
+}
+.full img {
+  min-width: 500px;
+}
+code[class*="language-"],
+pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -61,11 +72,9 @@ pre[class*="language-javascript"] {
 	word-break: normal;
 	word-wrap: normal;
 	line-height: 1.5;
-
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
 	tab-size: 4;
-
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
 	-ms-hyphens: none;
@@ -74,19 +83,19 @@ pre[class*="language-javascript"] {
 }
 
 /* Code blocks */
-pre[class*="language-javascript"] {
+pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 }
 
-:not(pre) > code[class*="language-javascript"],
-pre[class*="language-javascript"] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
 	background: #2d2d2d;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-javascript"] {
+:not(pre) > code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
@@ -216,13 +225,13 @@ pre[data-line] {
 	content: none;
 }
 
-pre[class*="language-javascript"].line-numbers {
+pre[class*="language-"].line-numbers {
 	position: relative;
 	padding-left: 3.8em;
 	counter-reset: linenumber;
 }
 
-pre[class*="language-javascript"].line-numbers > code {
+pre[class*="language-"].line-numbers > code {
 	position: relative;
 	white-space: inherit;
 }

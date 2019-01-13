@@ -13,8 +13,8 @@
                   <figure class="image is-64x64">
                     <!-- Bind results using a ':' -->
                     <!-- Use a v-if/else if their is a featured_image -->
-                    <img v-if="post.featured_image" :src="post.featured_image" alt="">
-                    <img v-else src="http://via.placeholder.com/250x250" alt="">
+                    <img class="thumb" v-if="post.featured_image" :src="post.featured_image" alt="">
+                    <img class="thumb" v-else src="http://via.placeholder.com/250x250" alt="">
                   </figure>
                 </router-link>
               </div>
@@ -82,6 +82,9 @@
 
 <style>
 img:not(.md-image) {
+  max-width: 250px;
+}
+img.thumb {
   max-width: 250px !important;
 }
 .media {
