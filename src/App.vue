@@ -16,8 +16,8 @@
         </md-toolbar>
         <md-list>
           <md-list-item>
-            <md-icon>move_to_inbox</md-icon>
-            <span class="md-list-item-text">Inbox</span>
+            <md-icon>subject</md-icon>
+            <span class="md-list-item-text">Categories</span>
           </md-list-item>
         </md-list>
       </md-app-drawer>

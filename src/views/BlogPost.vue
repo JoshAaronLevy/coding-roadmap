@@ -1,19 +1,8 @@
 <template>
   <div class="section" id="blog-post">
     <div class="container">
-      <!-- <div class="has-text-centered">
-        <router-link v-if="post.meta.previous_post" :to="/blog/ + post.meta.previous_post.slug" class="button">
-          {{ post.meta.previous_post.title }}
-        </router-link>
-        <router-link v-if="post.meta.next_post" :to="/blog/ + post.meta.next_post.slug" class="button">
-          {{ post.meta.next_post.title }} >
-        </router-link>
-      </div>
-      <hr> -->
       <h1 class="is-size-2 center">{{ post.data.title }}</h1>
       <figure class="center full">
-        <!-- Bind results using a ':' -->
-        <!-- Use a v-if/else if their is a featured_image -->
         <img :src="post.data.featured_image" alt="">
       </figure>
       <h4 class="center">{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
@@ -41,6 +30,11 @@
           }).catch((res) => {
             console.log(res)
           })
+        setTimeout(function() {
+          window.Prism.highlightAll(false, (arg) => {
+            console.log(arg)
+          })
+        }, 500)
       }
     },
     watch: {
@@ -61,8 +55,8 @@
 .full img {
   min-width: 500px;
 }
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*="language-javascript"],
+pre[class*="language-javascript"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -83,19 +77,19 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*="language-javascript"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*="language-javascript"],
+pre[class*="language-javascript"] {
 	background: #2d2d2d;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code[class*="language-javascript"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
@@ -225,13 +219,13 @@ pre[data-line] {
 	content: none;
 }
 
-pre[class*="language-"].line-numbers {
+pre[class*="language-javascript"].line-numbers {
 	position: relative;
 	padding-left: 3.8em;
 	counter-reset: linenumber;
 }
 
-pre[class*="language-"].line-numbers > code {
+pre[class*="language-javascript"].line-numbers > code {
 	position: relative;
 	white-space: inherit;
 }
