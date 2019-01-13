@@ -6,7 +6,7 @@
       <div class="columns is-multiline">
         <!-- Create v-for and apply a key for Vue. Example is using a combination of the slug and index -->
         <div class="column is-one-third" v-for="(post,index) in posts" :key="post.slug + '_' + index">
-          <router-link :to="'/blog/' + post.slug">
+          <router-link :to="'/' + post.slug">
             <div class="box">
               <article class="media">
                 <div class="media-left">
