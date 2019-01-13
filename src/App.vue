@@ -1,28 +1,20 @@
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="flexible">
-      <md-app-toolbar class="md-large md-primary">
+    <md-app md-waterfall md-mode="overlap">
+      <md-app-toolbar class="md-primary md-large">
         <div class="md-toolbar-row">
-          <div class="md-toolbar-section-start">
-            <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
-              <md-icon>menu</md-icon>
-            </md-button>
-          </div>
+          <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+            <md-icon>menu</md-icon>
+          </md-button>
 
-          <div class="md-toolbar-section-end">
-            <md-button class="md-icon-button">
-              <md-icon>more_vert</md-icon>
-            </md-button>
-          </div>
-        </div>
-
-        <div class="md-toolbar-row md-toolbar-offset">
-          <span class="md-display-1">My Title</span>
+          <span class="md-title">Coding Roadmap</span>
         </div>
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible">
-        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+        <md-toolbar class="md-transparent" md-elevation="0">
+          Navigation
+        </md-toolbar>
 
         <md-list>
           <md-list-item>
@@ -57,12 +49,16 @@
 
 <style lang="scss" scoped>
   .md-app {
-    max-height: 400px;
+    min-height: 100vh;
     border: 1px solid rgba(#000, .12);
   }
 
-  .md-app-toolbar {
-    height: 196px;
+  .md-toolbar.md-theme-default.md-primary {
+    height: 120px !important;
+  }
+
+  .md-app.md-overlap .md-app-content {
+    margin: -50px 24px 24px !important;
   }
 
   // Demo purposes only
@@ -74,7 +70,7 @@
 
 <script>
 export default {
-  name: 'Flexible',
+  name: 'Overlap',
   data: () => ({
     menuVisible: false
   })
