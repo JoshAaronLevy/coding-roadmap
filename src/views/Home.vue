@@ -87,4 +87,11 @@ img:not(.md-image) {
 .media {
   display: flex;
 }
+body {
+  line-height: 26px !important;
+}
+
+p {
+  font-size: 16px !important;
+}
 </style>

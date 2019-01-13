@@ -37,6 +37,14 @@
     border: 1px solid rgba(#000, .12);
   }
 
+  body {
+    line-height: 26px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+
   .md-toolbar.md-theme-default.md-primary {
     height: 120px !important;
   }
