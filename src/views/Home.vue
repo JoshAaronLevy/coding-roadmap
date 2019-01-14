@@ -95,6 +95,8 @@ body {
 }
 p {
   font-size: 16px !important;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
 }
 .md-theme-default a:hover {
   text-decoration: none !important;
