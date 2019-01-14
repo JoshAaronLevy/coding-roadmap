@@ -93,8 +93,11 @@ img.thumb {
 body {
   line-height: 26px !important;
 }
-
 p {
   font-size: 16px !important;
+}
+.md-theme-default a:hover {
+  text-decoration: none !important;
+  color: #64dd17 !important;
 }
 </style>
