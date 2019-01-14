@@ -81,10 +81,10 @@
 </script>
 
 <style>
-img:not(.md-image) {
+.media-left img:not(.md-image) {
   max-width: 250px;
 }
-img.thumb {
+.media-left img.thumb {
   max-width: 250px !important;
 }
 .media {
