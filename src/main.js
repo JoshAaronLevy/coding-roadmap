@@ -11,6 +11,7 @@ import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/black-green-light.css'
 
 Vue.use(VueMaterial)
+Vue.use(require('vue-moment'))
 
 new Vue({
   router,

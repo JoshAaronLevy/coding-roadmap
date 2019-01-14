@@ -5,8 +5,10 @@
       <figure class="center full">
         <img :src="post.data.featured_image" alt="">
       </figure>
-      <h4 class="center">{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
+      <h3 class="center">By {{ post.data.author.first_name }} {{ post.data.author.last_name }} - {{ post.data.created | moment("MMMM Do, YYYY") }}</h3>
+      <div class="addthis_inline_share_toolbox"></div>
       <div class="content" v-html="post.data.body"></div>
+      <div class="addthis_inline_share_toolbox mb30"></div>
     </div>
   </div>
 </template>
@@ -54,6 +56,9 @@
 }
 .full img {
   min-width: 500px;
+}
+.mb30 {
+  margin-bottom: 30px;
 }
 div.code-toolbar>.toolbar a {
   color: #fff !important;
