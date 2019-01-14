@@ -55,6 +55,14 @@
 .full img {
   min-width: 500px;
 }
+div.code-toolbar>.toolbar a {
+  color: #fff !important;
+  font-size: 16px !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
 code[class*="language-javascript"],
 pre[class*="language-javascript"] {
 	color: #ccc;
