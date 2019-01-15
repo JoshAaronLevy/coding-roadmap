@@ -1,14 +1,14 @@
 <template>
   <div class="section" id="blog-post">
     <div class="container">
-      <h1 class="is-size-2 center">{{ post.data.title }}</h1>
-      <figure class="center full">
-        <img :src="post.data.featured_image" alt="">
-      </figure>
-      <h3 class="center">By {{ post.data.author.first_name }} {{ post.data.author.last_name }} - {{ post.data.created | moment("MMMM Do, YYYY") }}</h3>
-      <div class="addthis_inline_share_toolbox"></div>
-      <div class="content" v-html="post.data.body"></div>
-      <div class="addthis_inline_share_toolbox mb30"></div>
+			<h1 class="is-size-2 center">{{ post.title }}</h1>
+			<figure class="center full">
+				<img :src="post.featured_image" alt="">
+			</figure>
+			<h3 class="center">By {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.created | moment("MMMM Do, YYYY") }}</h3>
+			<div class="addthis_inline_share_toolbox"></div>
+			<div class="content" v-html="post.body"></div>
+			<div class="addthis_inline_share_toolbox mb30"></div>
     </div>
   </div>
 </template>
@@ -20,27 +20,28 @@
     name: 'blog-post',
     data() {
       return {
-        post: {}
+				post: {
+					title: {},
+					featured_image: {},
+					author: {},
+					created: {},
+					body: {}
+				}
       }
-    },
+		},
     methods: {
       getPost() {
         butter.post.retrieve(this.$route.params.slug)
           .then((res) => {
-            this.post = res.data
+            this.post = res.data.data
           }).catch((res) => {
-            console.log(res)
+						console.log(res)
 					})
 					.then(() => {
 						window.Prism.highlightAll(false)
 					})
       }
-    },
-    watch: {
-      $route(to, from) {
-        this.getPost()
-      }
-    },
+		},
     created() {
       this.getPost()
     }
@@ -68,7 +69,7 @@ div.code-toolbar>.toolbar a {
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #ccc;
+	color: #fafafa;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
@@ -98,7 +99,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	background: #2d2d2d;
+	background: #222222;
 }
 
 /* Inline code */
@@ -106,6 +107,36 @@ pre[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
+}
+
+.keyword-import,
+.keyword-export,
+.keyword-from {
+	color: #89DDFF !important;
+}
+
+.language-typescript .token.punctuation {
+	color: #FFCC00 !important;
+}
+
+.language-typescript .token.operator {
+	color: #C792EA !important;
+}
+
+.language-typescript .token.parameter {
+	color: #FF5370 !important;
+}
+
+.language-typescript .token.builtin {
+	color: #89DDFF !important;
+}
+
+.language-typescript .token.function {
+	color: #6196cc !important;
+}
+
+.keyword-this {
+	color: #FF5370 !important;
 }
 
 .token.comment,
@@ -117,14 +148,16 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-	color: #ccc;
+	color: #89DDFF;
 }
 
-.token.tag,
+.token.tag {
+	color: #FF5370;
+}
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-	color: #e2777a;
+	color: #C792EA;
 }
 
 .token.function-name {

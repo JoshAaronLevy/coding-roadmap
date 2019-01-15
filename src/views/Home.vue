@@ -4,15 +4,12 @@
       <h1 class="is-size-1">Articles</h1>
       <hr>
       <div class="columns is-multiline">
-        <!-- Create v-for and apply a key for Vue. Example is using a combination of the slug and index -->
         <div class="column is-one-third" v-for="(post,index) in posts" :key="post.slug + '_' + index">
           <div class="box">
             <article class="media">
               <div class="media-left">
                 <router-link :to="'/' + post.slug">
                   <figure class="image is-64x64">
-                    <!-- Bind results using a ':' -->
-                    <!-- Use a v-if/else if their is a featured_image -->
                     <img class="thumb" v-if="post.featured_image" :src="post.featured_image" alt="">
                     <img class="thumb" v-else src="http://via.placeholder.com/250x250" alt="">
                   </figure>
