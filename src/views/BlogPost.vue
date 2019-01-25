@@ -76,6 +76,10 @@ a:hover {
 	color: #212121 !important;
 }
 
+li {
+	font-size: 16px !important;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #fafafa;
