@@ -54,6 +54,7 @@
 }
 .full img {
   min-width: 500px;
+  max-width: 500px;
 }
 .mb30 {
   margin-bottom: 30px;

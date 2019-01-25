@@ -22,6 +22,8 @@
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-pwa": "^3.3.0",
     "@vue/cli-service": "^3.3.0",
+    "chromedriver": "^2.45.0",
+    "nightwatch": "^1.0.18",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-template-compiler": "^2.5.21"
