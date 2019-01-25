@@ -16,16 +16,22 @@
         </md-toolbar>
         <md-list>
           <md-list-item>
-            <md-icon>list</md-icon>
-            <span class="md-list-item-text">Articles</span>
+            <router-link to="/">
+              <md-icon>list</md-icon>
+              <span class="md-list-item-text">Articles</span>
+            </router-link>
           </md-list-item>
           <md-list-item>
-            <md-icon>view_module</md-icon>
-            <span class="md-list-item-text">Categories</span>
+            <router-link to="/categories">
+              <md-icon>view_module</md-icon>
+              <span class="md-list-item-text">Categories</span>
+            </router-link>
           </md-list-item>
           <md-list-item>
-            <md-icon>label</md-icon>
-            <span class="md-list-item-text">Tags</span>
+            <router-link to="/tags">
+              <md-icon>label</md-icon>
+              <span class="md-list-item-text">Tags</span>
+            </router-link>
           </md-list-item>
         </md-list>
       </md-app-drawer>
@@ -44,6 +50,20 @@
   .md-app {
     min-height: 100vh;
     border: 1px solid rgba(#000, .12);
+  }
+
+  .md-toolbar {
+    font-size: 18px;
+  }
+
+  .md-list-item a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .md-list-item .md-icon {
+    margin-right: 10px !important;
   }
 
   body {
