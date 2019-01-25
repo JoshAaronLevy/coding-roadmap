@@ -68,6 +68,11 @@
 .list-header {
 	margin-bottom: 5px !important;
 }
+
+.content {
+	padding: 50px;
+}
+
 div.code-toolbar>.toolbar a {
   color: #fff !important;
   font-size: 16px !important;
@@ -75,14 +80,6 @@ div.code-toolbar>.toolbar a {
   padding-bottom: 7px !important;
   padding-left: 10px !important;
   padding-right: 10px !important;
-}
-
-a {
-	color: #64dd17 !important;
-}
-
-a:hover {
-	color: #212121 !important;
 }
 
 li {

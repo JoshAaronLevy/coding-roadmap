@@ -1,8 +1,7 @@
 <template>
   <div id="blog-home" class="section">
     <div class="container">
-      <h1 class="is-size-1">Articles</h1>
-      <hr>
+      <h2 class="is-size-1">Articles</h2>
       <div class="columns is-multiline">
         <div class="column is-one-third" v-for="(post,index) in posts" :key="post.slug + '_' + index">
           <div class="box">
@@ -20,7 +19,7 @@
                   <router-link :to="'/' + post.slug">
                     <h2 class="title is-5">{{ post.title }}</h2>
                   </router-link>
-                  <p>{{ post.summary }}</p>
+                  <p class="post-summary">{{ post.summary }}</p>
                 </div>
               </div>
             </article>
@@ -101,10 +100,6 @@
   color: #FFFFFF !important;
 }
 
-body{
-  --md-theme-default-accent: #368cbf !important;
-}
-
 .md-theme-default :not(input):not(textarea)::selection {
   background-color: #368cbf !important;
   color: #FFFFFF !important;
@@ -118,14 +113,21 @@ body{
 }
 .media {
   display: flex;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  border-top: 1px solid;
 }
 body {
   line-height: 26px !important;
+  --md-theme-default-accent: #368cbf !important;
 }
 p {
   font-size: 16px !important;
   margin-top: 30px !important;
   margin-bottom: 30px !important;
+}
+p.post-summary {
+  padding-right: 80px;
 }
 
 </style>
