@@ -77,6 +77,39 @@
 </script>
 
 <style>
+.md-toolbar.md-theme-default.md-primary {
+  background-color: #368cbf !important;
+}
+.md-theme-default a {
+  color: #368cbf !important;
+}
+
+.md-theme-default a:hover {
+  text-decoration: none !important;
+  color: #33363b !important;
+}
+
+.md-title {
+  font-size: 22px !important;
+}
+
+.md-title a {
+  color: #FFFFFF !important;
+}
+
+.md-title a:hover {
+  color: #FFFFFF !important;
+}
+
+body{
+  --md-theme-default-accent: #368cbf !important;
+}
+
+.md-theme-default :not(input):not(textarea)::selection {
+  background-color: #368cbf !important;
+  color: #FFFFFF !important;
+}
+
 .media-left img:not(.md-image) {
   max-width: 250px;
 }
@@ -94,8 +127,5 @@ p {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
 }
-.md-theme-default a:hover {
-  text-decoration: none !important;
-  color: #64dd17 !important;
-}
+
 </style>

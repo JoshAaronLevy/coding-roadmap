@@ -58,19 +58,6 @@
     height: 120px;
   }
 
-  .md-title a {
-    color: #fff !important;
-  }
-
-  .md-theme-default a {
-    color: #fff;
-  }
-
-  .md-theme-default a:hover {
-    text-decoration: none;
-    color: #fff;
-  }
-
   .md-app.md-overlap .md-app-content {
     margin: -50px 24px 24px !important;
   }

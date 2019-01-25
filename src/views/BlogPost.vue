@@ -1,7 +1,7 @@
 <template>
   <div class="section" id="blog-post">
     <div class="container">
-			<h1 class="is-size-2 center">{{ post.title }}</h1>
+			<h1 class="is-size-2 center post-title">{{ post.title }}</h1>
 			<figure class="center full">
 				<img :src="post.featured_image" alt="">
 			</figure>
@@ -58,6 +58,15 @@
 }
 .mb30 {
   margin-bottom: 30px;
+}
+.post-title {
+	color: #33363b !important;
+}
+.mt-0 {
+	margin-top: 0px !important;
+}
+.list-header {
+	margin-bottom: 5px !important;
 }
 div.code-toolbar>.toolbar a {
   color: #fff !important;
