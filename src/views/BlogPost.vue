@@ -68,6 +68,14 @@ div.code-toolbar>.toolbar a {
   padding-right: 10px !important;
 }
 
+a {
+	color: #64dd17 !important;
+}
+
+a:hover {
+	color: #212121 !important;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #fafafa;
