@@ -19,6 +19,7 @@
                   <router-link :to="'/' + post.slug">
                     <h2 class="title is-5">{{ post.title }}</h2>
                   </router-link>
+                  <h4>{{ post.categories.name }}</h4>
                   <p class="post-summary">{{ post.summary }}</p>
                 </div>
               </div>
@@ -38,7 +39,8 @@
       return {
         page_title: 'Blog',
         posts: [],
-        categories: []
+        categories: [],
+        categoryArr: []
       }
     },
     methods: {
@@ -53,8 +55,9 @@
       getCategories() {
         butter.category.list()
           .then((res) => {
+            this.categories = res
             console.log('List of Categories:')
-            console.log(res.data.data)
+            console.log(this.categories)
           })
       },
       getPostsByCategory() {
