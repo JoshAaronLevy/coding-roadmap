@@ -19,7 +19,7 @@
                   <router-link :to="'/' + post.slug">
                     <h2 class="title is-5">{{ post.title }}</h2>
                   </router-link>
-                  <h4>{{ post.categories.name }}</h4>
+                  <h4>{{ post.categories }}</h4>
                   <p class="post-summary">{{ post.summary }}</p>
                 </div>
               </div>
@@ -40,7 +40,7 @@
         page_title: 'Blog',
         posts: [],
         categories: [],
-        categoryArr: []
+        categoryName: null
       }
     },
     methods: {
@@ -48,32 +48,37 @@
         butter.post.list({
           page: 1,
           page_size: 10
-        }).then((res) => {
+        }).then(res => {
           this.posts = res.data.data
+          // console.log(this.posts)
         })
       },
       getCategories() {
         butter.category.list()
-          .then((res) => {
-            this.categories = res
+          .then(res => {
+            this.categories = res.data.data
             console.log('List of Categories:')
             console.log(this.categories)
-          })
-      },
-      getPostsByCategory() {
-        butter.category.retrieve('example-category', {
-            include: 'recent_posts'
-          })
-          .then((res) => {
-            console.log('Posts with specific category:')
-            console.log(res)
+          }).then(res => {
+            for (let i = 0; i < this.categories.length; i++) {
+              console.log(this.categories[i].name)
+            }
           })
       }
+      // getPostsByCategory() {
+      //   butter.category.retrieve('example-category', {
+      //       include: 'recent_posts'
+      //     })
+      //     .then(res => {
+      //       console.log('Posts with specific category:')
+      //       console.log(res)
+      //     })
+      // }
     },
     created() {
       this.getPosts()
       this.getCategories()
-      this.getPostsByCategory()
+      // this.getPostsByCategory()
     }
   }
 </script>
