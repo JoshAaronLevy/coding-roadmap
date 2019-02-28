@@ -41,7 +41,7 @@
     </md-app>
     <md-toolbar class="md-dense">
       <h4 class="copy">Copyright 2019 - Josh Levy</h4>
-      <h4 class="copy">Content Managed With <a href="https://buttercms.com/" target="_blank">ButterCMS</a></h4>
+      <h4 class="copy">Content Managed With <a href="https://buttercms.com/" target="_blank"><img src="https://s3-us-west-2.amazonaws.com/bad-movie-night/codingroadmap/butter-b.png" alt="ButterCMS" /></a></h4>
     </md-toolbar>
   </div>
 </template>
@@ -90,6 +90,10 @@
 
   .copy {
     margin: 0px;
+  }
+
+  .copy img {
+    height: 50px;
   }
 
   .md-dense {

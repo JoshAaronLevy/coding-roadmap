@@ -19,7 +19,7 @@
                   <router-link :to="'/' + post.slug">
                     <h2 class="title is-5">{{ post.title }}</h2>
                   </router-link>
-                  <h4>{{ post.categories }}</h4>
+                  <!-- <h4>{{ post.categories }}</h4> -->
                   <p class="post-summary">{{ post.summary }}</p>
                 </div>
               </div>
@@ -51,18 +51,24 @@
         }).then(res => {
           this.posts = res.data.data
           // console.log(this.posts)
-        })
+        }).then(res => {
+            for (let i = 0; i < this.posts.length; i++) {
+              // console.log(this.posts[i].categories)
+              this.categories = this.posts[i].categories
+              // JSON.parse(JSON.stringify(this.categories[0]))
+              console.log(this.categories[0].name)
+              // for (let j = 0; j < this.categories[j].length; j++) {
+                //   console.log(this.categories[j])
+              // }
+            }
+          })
       },
       getCategories() {
         butter.category.list()
           .then(res => {
             this.categories = res.data.data
-            console.log('List of Categories:')
-            console.log(this.categories)
-          }).then(res => {
-            for (let i = 0; i < this.categories.length; i++) {
-              console.log(this.categories[i].name)
-            }
+            // console.log('List of Categories:')
+            // console.log(this.categories)
           })
       }
       // getPostsByCategory() {
