@@ -73,6 +73,11 @@
 	padding: 50px;
 }
 
+.featured-video {
+	height: 630px !important;
+	width: 1120px;
+}
+
 div.code-toolbar>.toolbar a {
   color: #fff !important;
   font-size: 16px !important;
