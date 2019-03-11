@@ -3,14 +3,14 @@
     <md-app md-waterfall md-mode="overlap">
       <md-app-toolbar class="md-primary md-large">
         <div class="md-toolbar-row">
-          <!-- <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+          <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
             <md-icon>menu</md-icon>
-          </md-button> -->
+          </md-button>
           <span class="md-title"><router-link to="/">Coding Roadmap</router-link></span>
           <!-- <md-button class="md-primary">Login</md-button> -->
         </div>
       </md-app-toolbar>
-      <!-- <md-app-drawer :md-active.sync="menuVisible">
+      <md-app-drawer :md-active.sync="menuVisible">
         <md-toolbar class="md-transparent" md-elevation="0">
           Navigation
         </md-toolbar>
@@ -34,7 +34,7 @@
             </router-link>
           </md-list-item>
         </md-list>
-      </md-app-drawer> -->
+      </md-app-drawer>
       <md-app-content>
         <router-view/>
       </md-app-content>
