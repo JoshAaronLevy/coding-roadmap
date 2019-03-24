@@ -3,9 +3,9 @@
     <md-app md-waterfall md-mode="overlap">
       <md-app-toolbar class="md-primary md-large">
         <div class="md-toolbar-row">
-          <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+          <!-- <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
             <md-icon>menu</md-icon>
-          </md-button>
+          </md-button> -->
           <span class="md-title"><router-link to="/">Coding Roadmap</router-link></span>
           <!-- <md-button class="md-primary">Login</md-button> -->
         </div>
